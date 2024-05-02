@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>backend.all_class.user_class package &mdash; Learning Management System  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=92fd9be5" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Learning Management System
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">backend.all_class.user_class package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-backend.all_class.user_class.admin">backend.all_class.user_class.admin module</a></li>
+<li><a class="reference internal" href="#module-backend.all_class.user_class.instructor">backend.all_class.user_class.instructor module</a><ul>
+<li><a class="reference internal" href="#backend.all_class.user_class.instructor.Instructor"><code class="docutils literal notranslate"><span class="pre">Instructor</span></code></a><ul>
+<li><a class="reference internal" href="#backend.all_class.user_class.instructor.Instructor.create_course"><code class="docutils literal notranslate"><span class="pre">Instructor.create_course()</span></code></a></li>
+<li><a class="reference internal" href="#backend.all_class.user_class.instructor.Instructor.delete_course"><code class="docutils literal notranslate"><span class="pre">Instructor.delete_course()</span></code></a></li>
+<li><a class="reference internal" href="#backend.all_class.user_class.instructor.Instructor.get_courses"><code class="docutils literal notranslate"><span class="pre">Instructor.get_courses()</span></code></a></li>
+<li><a class="reference internal" href="#backend.all_class.user_class.instructor.Instructor.get_instructor_details"><code class="docutils literal notranslate"><span class="pre">Instructor.get_instructor_details()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-backend.all_class.user_class.student">backend.all_class.user_class.student module</a><ul>
+<li><a class="reference internal" href="#backend.all_class.user_class.student.Student"><code class="docutils literal notranslate"><span class="pre">Student</span></code></a><ul>
+<li><a class="reference internal" href="#backend.all_class.user_class.student.Student.enroll_course"><code class="docutils literal notranslate"><span class="pre">Student.enroll_course()</span></code></a></li>
+<li><a class="reference internal" href="#backend.all_class.user_class.student.Student.get_courses"><code class="docutils literal notranslate"><span class="pre">Student.get_courses()</span></code></a></li>
+<li><a class="reference internal" href="#backend.all_class.user_class.student.Student.get_student_details"><code class="docutils literal notranslate"><span class="pre">Student.get_student_details()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-backend.all_class.user_class.users">backend.all_class.user_class.users module</a><ul>
+<li><a class="reference internal" href="#backend.all_class.user_class.users.User"><code class="docutils literal notranslate"><span class="pre">User</span></code></a><ul>
+<li><a class="reference internal" href="#backend.all_class.user_class.users.User.change_contact_no"><code class="docutils literal notranslate"><span class="pre">User.change_contact_no()</span></code></a></li>
+<li><a class="reference internal" href="#backend.all_class.user_class.users.User.change_email"><code class="docutils literal notranslate"><span class="pre">User.change_email()</span></code></a></li>
+<li><a class="reference internal" href="#backend.all_class.user_class.users.User.change_password"><code class="docutils literal notranslate"><span class="pre">User.change_password()</span></code></a></li>
+<li><a class="reference internal" href="#backend.all_class.user_class.users.User.generate_user_id"><code class="docutils literal notranslate"><span class="pre">User.generate_user_id()</span></code></a></li>
+<li><a class="reference internal" href="#backend.all_class.user_class.users.User.get_user_details"><code class="docutils literal notranslate"><span class="pre">User.get_user_details()</span></code></a></li>
+<li><a class="reference internal" href="#backend.all_class.user_class.users.User.hash_password"><code class="docutils literal notranslate"><span class="pre">User.hash_password()</span></code></a></li>
+<li><a class="reference internal" href="#backend.all_class.user_class.users.User.to_dict"><code class="docutils literal notranslate"><span class="pre">User.to_dict()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-backend.all_class.user_class">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Learning Management System</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">backend.all_class.user_class package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/backend.all_class.user_class.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="backend-all-class-user-class-package">
+<h1>backend.all_class.user_class package<a class="headerlink" href="#backend-all-class-user-class-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-backend.all_class.user_class.admin">
+<span id="backend-all-class-user-class-admin-module"></span><h2>backend.all_class.user_class.admin module<a class="headerlink" href="#module-backend.all_class.user_class.admin" title="Link to this heading"></a></h2>
+</section>
+<section id="module-backend.all_class.user_class.instructor">
+<span id="backend-all-class-user-class-instructor-module"></span><h2>backend.all_class.user_class.instructor module<a class="headerlink" href="#module-backend.all_class.user_class.instructor" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="backend.all_class.user_class.instructor.Instructor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">backend.all_class.user_class.instructor.</span></span><span class="sig-name descname"><span class="pre">Instructor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">age</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">email</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">country</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">city</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contact_no</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/all_class/user_class/instructor.html#Instructor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.all_class.user_class.instructor.Instructor" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#backend.all_class.user_class.users.User" title="backend.all_class.user_class.users.User"><code class="xref py py-class docutils literal notranslate"><span class="pre">User</span></code></a></p>
+<p>Instructor class to create instructor object</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.all_class.user_class.instructor.Instructor.create_course">
+<span class="sig-name descname"><span class="pre">create_course</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">course</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/backend/all_class/user_class/instructor.html#Instructor.create_course"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.all_class.user_class.instructor.Instructor.create_course" title="Link to this definition"></a></dt>
+<dd><p>Create course by instructor</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>course</strong></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.all_class.user_class.instructor.Instructor.delete_course">
+<span class="sig-name descname"><span class="pre">delete_course</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">course</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/backend/all_class/user_class/instructor.html#Instructor.delete_course"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.all_class.user_class.instructor.Instructor.delete_course" title="Link to this definition"></a></dt>
+<dd><p>Delete course by instructor</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>course</strong></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.all_class.user_class.instructor.Instructor.get_courses">
+<span class="sig-name descname"><span class="pre">get_courses</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="reference internal" href="_modules/backend/all_class/user_class/instructor.html#Instructor.get_courses"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.all_class.user_class.instructor.Instructor.get_courses" title="Link to this definition"></a></dt>
+<dd><p>Get courses of instructor</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.all_class.user_class.instructor.Instructor.get_instructor_details">
+<span class="sig-name descname"><span class="pre">get_instructor_details</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference internal" href="_modules/backend/all_class/user_class/instructor.html#Instructor.get_instructor_details"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.all_class.user_class.instructor.Instructor.get_instructor_details" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-backend.all_class.user_class.student">
+<span id="backend-all-class-user-class-student-module"></span><h2>backend.all_class.user_class.student module<a class="headerlink" href="#module-backend.all_class.user_class.student" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="backend.all_class.user_class.student.Student">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">backend.all_class.user_class.student.</span></span><span class="sig-name descname"><span class="pre">Student</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">age</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">email</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">country</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">city</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contact_no</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/all_class/user_class/student.html#Student"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.all_class.user_class.student.Student" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#backend.all_class.user_class.users.User" title="backend.all_class.user_class.users.User"><code class="xref py py-class docutils literal notranslate"><span class="pre">User</span></code></a></p>
+<p>Student class to create student object</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.all_class.user_class.student.Student.enroll_course">
+<span class="sig-name descname"><span class="pre">enroll_course</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">course</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/backend/all_class/user_class/student.html#Student.enroll_course"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.all_class.user_class.student.Student.enroll_course" title="Link to this definition"></a></dt>
+<dd><p>Enroll student to a course</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>course</strong></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.all_class.user_class.student.Student.get_courses">
+<span class="sig-name descname"><span class="pre">get_courses</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="reference internal" href="_modules/backend/all_class/user_class/student.html#Student.get_courses"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.all_class.user_class.student.Student.get_courses" title="Link to this definition"></a></dt>
+<dd><p>Get courses of student</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.all_class.user_class.student.Student.get_student_details">
+<span class="sig-name descname"><span class="pre">get_student_details</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference internal" href="_modules/backend/all_class/user_class/student.html#Student.get_student_details"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.all_class.user_class.student.Student.get_student_details" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-backend.all_class.user_class.users">
+<span id="backend-all-class-user-class-users-module"></span><h2>backend.all_class.user_class.users module<a class="headerlink" href="#module-backend.all_class.user_class.users" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="backend.all_class.user_class.users.User">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">backend.all_class.user_class.users.</span></span><span class="sig-name descname"><span class="pre">User</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">age</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int16</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">email</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">country</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">city</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">role</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contact_no</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int16</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/all_class/user_class/users.html#User"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.all_class.user_class.users.User" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>User class to store user details</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.all_class.user_class.users.User.change_contact_no">
+<span class="sig-name descname"><span class="pre">change_contact_no</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new_contact_no</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int16</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/backend/all_class/user_class/users.html#User.change_contact_no"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.all_class.user_class.users.User.change_contact_no" title="Link to this definition"></a></dt>
+<dd><p>Change contact number of the user
+:param new_contact_no: New contact number
+:return: None</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.all_class.user_class.users.User.change_email">
+<span class="sig-name descname"><span class="pre">change_email</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new_email</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/backend/all_class/user_class/users.html#User.change_email"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.all_class.user_class.users.User.change_email" title="Link to this definition"></a></dt>
+<dd><p>Change email of the user
+:param new_email: New email
+:return: None</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.all_class.user_class.users.User.change_password">
+<span class="sig-name descname"><span class="pre">change_password</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new_password</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/backend/all_class/user_class/users.html#User.change_password"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.all_class.user_class.users.User.change_password" title="Link to this definition"></a></dt>
+<dd><p>Change password of the user
+:param new_password: New password
+:return: None</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.all_class.user_class.users.User.generate_user_id">
+<span class="sig-name descname"><span class="pre">generate_user_id</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/backend/all_class/user_class/users.html#User.generate_user_id"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.all_class.user_class.users.User.generate_user_id" title="Link to this definition"></a></dt>
+<dd><p>Generate user id using email
+:return: None</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.all_class.user_class.users.User.get_user_details">
+<span class="sig-name descname"><span class="pre">get_user_details</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference internal" href="_modules/backend/all_class/user_class/users.html#User.get_user_details"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.all_class.user_class.users.User.get_user_details" title="Link to this definition"></a></dt>
+<dd><p>Get user details</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Dictionary of user details</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.all_class.user_class.users.User.hash_password">
+<span class="sig-name descname"><span class="pre">hash_password</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/backend/all_class/user_class/users.html#User.hash_password"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.all_class.user_class.users.User.hash_password" title="Link to this definition"></a></dt>
+<dd><p>Hash the password using email
+:return:</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.all_class.user_class.users.User.to_dict">
+<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference internal" href="_modules/backend/all_class/user_class/users.html#User.to_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.all_class.user_class.users.User.to_dict" title="Link to this definition"></a></dt>
+<dd><p>Convert object to dictionary
+:return: Dictionary of user details</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-backend.all_class.user_class">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-backend.all_class.user_class" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Sibgat Ul Islam.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

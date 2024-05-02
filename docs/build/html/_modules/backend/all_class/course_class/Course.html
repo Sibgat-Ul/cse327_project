@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>backend.all_class.course_class.Course &#8212; Learning Management System  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=61cd365c" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/alabaster.css?v=12dfc556" />
+    <script src="../../../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+   
+  <link rel="stylesheet" href="../../../../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <h1>Source code for backend.all_class.course_class.Course</h1><div class="highlight"><pre>
+<span></span>
+
+<div class="viewcode-block" id="Course">
+<a class="viewcode-back" href="../../../../backend.all_class.course_class.html#backend.all_class.course_class.Course.Course">[docs]</a>
+<span class="k">class</span> <span class="nc">Course</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Course class to create course object</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="n">course_id</span><span class="p">,</span>
+            <span class="n">course_name</span><span class="p">,</span>
+            <span class="n">course_description</span><span class="p">,</span>
+            <span class="n">course_credit</span><span class="p">,</span>
+            <span class="n">course_department</span><span class="p">,</span>
+            <span class="n">course_level</span><span class="p">,</span>
+            <span class="n">course_hour</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Course class to create course object</span>
+
+<span class="sd">        :param course_id: Course ID</span>
+<span class="sd">        :param course_name: Course Name</span>
+<span class="sd">        :param course_description: Course Description</span>
+<span class="sd">        :param course_credit: Course Credit</span>
+<span class="sd">        :param course_department: Course Department</span>
+<span class="sd">        :param course_level: Course Level</span>
+<span class="sd">        :param course_hour: Course Hour</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">course_id</span> <span class="o">=</span> <span class="n">course_id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">course_name</span> <span class="o">=</span> <span class="n">course_name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">course_description</span> <span class="o">=</span> <span class="n">course_description</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">course_credit</span> <span class="o">=</span> <span class="n">course_credit</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">course_department</span> <span class="o">=</span> <span class="n">course_department</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">course_level</span> <span class="o">=</span> <span class="n">course_level</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">course_hour</span> <span class="o">=</span> <span class="n">course_hour</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">announcements</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">course_material</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">course_assignment</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">course_assessment</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Course ID: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">course_id</span><span class="si">}</span><span class="s2">, &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;Course Name: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">course_name</span><span class="si">}</span><span class="s2">, &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;Course Description: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">course_description</span><span class="si">}</span><span class="s2">, &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;Course Credit: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">course_credit</span><span class="si">}</span><span class="s2">, &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;Course Department: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">course_department</span><span class="si">}</span><span class="s2">, &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;Course Level: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">course_level</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="p">)</span>
+
+<div class="viewcode-block" id="Course.add_announcement">
+<a class="viewcode-back" href="../../../../backend.all_class.course_class.html#backend.all_class.course_class.Course.Course.add_announcement">[docs]</a>
+    <span class="k">def</span> <span class="nf">add_announcement</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">announcement</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Add announcement to course</span>
+
+<span class="sd">        :param announcement: Announcement</span>
+<span class="sd">        :return: None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">announcements</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">announcement</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Course.get_announcements">
+<a class="viewcode-back" href="../../../../backend.all_class.course_class.html#backend.all_class.course_class.Course.Course.get_announcements">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_announcements</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get announcements of course</span>
+
+<span class="sd">        :return: List of announcements</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">announcements</span></div>
+
+
+<div class="viewcode-block" id="Course.add_course_material">
+<a class="viewcode-back" href="../../../../backend.all_class.course_class.html#backend.all_class.course_class.Course.Course.add_course_material">[docs]</a>
+    <span class="k">def</span> <span class="nf">add_course_material</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">course_material</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Add course material to course</span>
+
+<span class="sd">        :param course_material: Course Material</span>
+<span class="sd">        :return: None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">course_material</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">course_material</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Course.get_course_material">
+<a class="viewcode-back" href="../../../../backend.all_class.course_class.html#backend.all_class.course_class.Course.Course.get_course_material">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_course_material</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get course material of course</span>
+
+<span class="sd">        :return: List of course material</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">course_material</span></div>
+
+
+<div class="viewcode-block" id="Course.add_course_assignment">
+<a class="viewcode-back" href="../../../../backend.all_class.course_class.html#backend.all_class.course_class.Course.Course.add_course_assignment">[docs]</a>
+    <span class="k">def</span> <span class="nf">add_course_assignment</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">course_assignment</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Add course assignment to course</span>
+
+<span class="sd">        :param course_assignment: Course Assignment</span>
+<span class="sd">        :return: None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">course_assignment</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">course_assignment</span><span class="p">)</span></div>
+</div>
+
+
+
+</pre></div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../../index.html">Learning Management System</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../../index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2024, Sibgat Ul Islam.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.3.7</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

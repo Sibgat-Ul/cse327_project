@@ -1,0 +1,21 @@
+all\_class.course\_class package
+================================
+
+Submodules
+----------
+
+all\_class.course\_class.Course module
+--------------------------------------
+
+.. automodule:: all_class.course_class.Course
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: all_class.course_class
+   :members:
+   :undoc-members:
+   :show-inheritance:

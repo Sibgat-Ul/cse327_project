@@ -1,0 +1,45 @@
+all\_class.user\_class package
+==============================
+
+Submodules
+----------
+
+all\_class.user\_class.admin module
+-----------------------------------
+
+.. automodule:: all_class.user_class.admin
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+all\_class.user\_class.instructor module
+----------------------------------------
+
+.. automodule:: all_class.user_class.instructor
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+all\_class.user\_class.student module
+-------------------------------------
+
+.. automodule:: all_class.user_class.student
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+all\_class.user\_class.users module
+-----------------------------------
+
+.. automodule:: all_class.user_class.users
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: all_class.user_class
+   :members:
+   :undoc-members:
+   :show-inheritance:

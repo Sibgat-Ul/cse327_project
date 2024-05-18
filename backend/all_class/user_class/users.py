@@ -35,6 +35,7 @@ class User:
         self.city = city
         self.role = role
         self.contact_no = contact_no
+
         self.courses = []
 
         self.user_id = None

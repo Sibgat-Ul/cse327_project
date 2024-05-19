@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>backend.views_module package &mdash; Learning Management System  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Learning Management System
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">backend.views_module package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-backend.views_module.course_views">backend.views_module.course_views module</a><ul>
+<li><a class="reference internal" href="#backend.views_module.course_views.add_course"><code class="docutils literal notranslate"><span class="pre">add_course()</span></code></a></li>
+<li><a class="reference internal" href="#backend.views_module.course_views.course_details"><code class="docutils literal notranslate"><span class="pre">course_details()</span></code></a></li>
+<li><a class="reference internal" href="#backend.views_module.course_views.delete_course"><code class="docutils literal notranslate"><span class="pre">delete_course()</span></code></a></li>
+<li><a class="reference internal" href="#backend.views_module.course_views.edit_course"><code class="docutils literal notranslate"><span class="pre">edit_course()</span></code></a></li>
+<li><a class="reference internal" href="#backend.views_module.course_views.enroll"><code class="docutils literal notranslate"><span class="pre">enroll()</span></code></a></li>
+<li><a class="reference internal" href="#backend.views_module.course_views.view_course_list"><code class="docutils literal notranslate"><span class="pre">view_course_list()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-backend.views_module.user_views">backend.views_module.user_views module</a><ul>
+<li><a class="reference internal" href="#backend.views_module.user_views.home"><code class="docutils literal notranslate"><span class="pre">home()</span></code></a></li>
+<li><a class="reference internal" href="#backend.views_module.user_views.login"><code class="docutils literal notranslate"><span class="pre">login()</span></code></a></li>
+<li><a class="reference internal" href="#backend.views_module.user_views.logout"><code class="docutils literal notranslate"><span class="pre">logout()</span></code></a></li>
+<li><a class="reference internal" href="#backend.views_module.user_views.register"><code class="docutils literal notranslate"><span class="pre">register()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-backend.views_module">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Learning Management System</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">backend.views_module package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/backend.views_module.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="backend-views-module-package">
+<h1>backend.views_module package<a class="headerlink" href="#backend-views-module-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-backend.views_module.course_views">
+<span id="backend-views-module-course-views-module"></span><h2>backend.views_module.course_views module<a class="headerlink" href="#module-backend.views_module.course_views" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="backend.views_module.course_views.add_course">
+<span class="sig-prename descclassname"><span class="pre">backend.views_module.course_views.</span></span><span class="sig-name descname"><span class="pre">add_course</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/views_module/course_views.html#add_course"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.views_module.course_views.add_course" title="Link to this definition"></a></dt>
+<dd><p>Add course</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>request</strong></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="backend.views_module.course_views.course_details">
+<span class="sig-prename descclassname"><span class="pre">backend.views_module.course_views.</span></span><span class="sig-name descname"><span class="pre">course_details</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/views_module/course_views.html#course_details"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.views_module.course_views.course_details" title="Link to this definition"></a></dt>
+<dd><p>View course details</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>request</strong> – request type</p></li>
+<li><p><strong>id</strong> – int</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>render</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="backend.views_module.course_views.delete_course">
+<span class="sig-prename descclassname"><span class="pre">backend.views_module.course_views.</span></span><span class="sig-name descname"><span class="pre">delete_course</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/views_module/course_views.html#delete_course"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.views_module.course_views.delete_course" title="Link to this definition"></a></dt>
+<dd><p>Delete course</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>request</strong> – Request type</p></li>
+<li><p><strong>id</strong> – int</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="backend.views_module.course_views.edit_course">
+<span class="sig-prename descclassname"><span class="pre">backend.views_module.course_views.</span></span><span class="sig-name descname"><span class="pre">edit_course</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/views_module/course_views.html#edit_course"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.views_module.course_views.edit_course" title="Link to this definition"></a></dt>
+<dd><p>Edit course</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>request</strong></p></li>
+<li><p><strong>id</strong></p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="backend.views_module.course_views.enroll">
+<span class="sig-prename descclassname"><span class="pre">backend.views_module.course_views.</span></span><span class="sig-name descname"><span class="pre">enroll</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/views_module/course_views.html#enroll"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.views_module.course_views.enroll" title="Link to this definition"></a></dt>
+<dd><p>Enroll in course</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>request</strong> – request type</p></li>
+<li><p><strong>id</strong> – int</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>redirect</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="backend.views_module.course_views.view_course_list">
+<span class="sig-prename descclassname"><span class="pre">backend.views_module.course_views.</span></span><span class="sig-name descname"><span class="pre">view_course_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/views_module/course_views.html#view_course_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.views_module.course_views.view_course_list" title="Link to this definition"></a></dt>
+<dd><p>View courses list</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>request</strong></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-backend.views_module.user_views">
+<span id="backend-views-module-user-views-module"></span><h2>backend.views_module.user_views module<a class="headerlink" href="#module-backend.views_module.user_views" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="backend.views_module.user_views.home">
+<span class="sig-prename descclassname"><span class="pre">backend.views_module.user_views.</span></span><span class="sig-name descname"><span class="pre">home</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/views_module/user_views.html#home"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.views_module.user_views.home" title="Link to this definition"></a></dt>
+<dd><p>Home page</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>request</strong></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="backend.views_module.user_views.login">
+<span class="sig-prename descclassname"><span class="pre">backend.views_module.user_views.</span></span><span class="sig-name descname"><span class="pre">login</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/views_module/user_views.html#login"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.views_module.user_views.login" title="Link to this definition"></a></dt>
+<dd><p>Login user</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>request</strong></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="backend.views_module.user_views.logout">
+<span class="sig-prename descclassname"><span class="pre">backend.views_module.user_views.</span></span><span class="sig-name descname"><span class="pre">logout</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/views_module/user_views.html#logout"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.views_module.user_views.logout" title="Link to this definition"></a></dt>
+<dd><p>Logout user
+:param request:
+:return:</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="backend.views_module.user_views.register">
+<span class="sig-prename descclassname"><span class="pre">backend.views_module.user_views.</span></span><span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/views_module/user_views.html#register"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.views_module.user_views.register" title="Link to this definition"></a></dt>
+<dd><p>Register user</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>request</strong></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-backend.views_module">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-backend.views_module" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Sibgat Ul Islam.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

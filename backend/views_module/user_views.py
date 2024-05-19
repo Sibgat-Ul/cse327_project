@@ -3,21 +3,10 @@ from backend.models import User, Course
 from backend.forms import UserForm
 
 
-def view_user_list(request):
-    """
-    View user list
-    :param request:
-    :return
-    """
-    users = User.objects.all()
-    context = {
-        'users': users
-    }
-    return render(request, 'backend/users/user_list.html', context)
-
-def login_user(request):
+def login(request):
     """
     Login user
+
     :param request:
     :return:
     """
@@ -27,11 +16,13 @@ def login_user(request):
         user = User.objects.get(username=username, password=password)
         if user:
             return redirect('home')
-    return render(request, 'backend/users/user_login.html')
+    return render(request, 'backend/users/login.html')
 
-def register_user(request):
+
+def register(request):
     """
     Register user
+
     :param request:
     :return:
     """
@@ -45,3 +36,22 @@ def register_user(request):
         'form': form
     }
     return render(request, 'backend/users/register.html', context)
+
+
+def home(request):
+    """
+    Home page
+
+    :param request:
+    :return:
+    """
+    return render(request, 'backend/home.html')
+
+
+def logout(request):
+    """
+    Logout user
+    :param request:
+    :return:
+    """
+    return redirect('home')

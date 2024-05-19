@@ -5,6 +5,7 @@ from backend.models import User, Course
 def view_course_list(request):
     """
     View courses list
+
     :param request:
     :return:
     """
@@ -18,6 +19,7 @@ def view_course_list(request):
 def add_course(request):
     """
     Add course
+
     :param request:
     :return:
     """
@@ -33,6 +35,7 @@ def add_course(request):
 def edit_course(request, id):
     """
     Edit course
+
     :param request:
     :param id:
     :return:
@@ -52,6 +55,7 @@ def edit_course(request, id):
 def delete_course(request, id):
     """
     Delete course
+
     :param request: Request type
     :param id: int
     :return:
@@ -64,6 +68,7 @@ def delete_course(request, id):
 def course_details(request, id):
     """
     View course details
+
     :param request: request type
     :param id: int
     :return: render
@@ -74,9 +79,11 @@ def course_details(request, id):
     }
     return render(request, 'backend/courses/course_view.html', context)
 
+
 def enroll(request, id):
     """
     Enroll in course
+
     :param request: request type
     :param id: int
     :return: redirect

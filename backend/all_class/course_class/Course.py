@@ -90,5 +90,3 @@ class Course:
         :return: None
         """
         self.course_assignment.append(course_assignment)
-
-

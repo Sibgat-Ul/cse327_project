@@ -1,0 +1,26 @@
+{% extends 'backend/base_files/base_course.html' %}
+
+{% block title %} Dashboard {% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            {% for course in courses %}
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>{{ course.title }}</h4>
+                        </div>
+                        <div class="card-body">
+                            <p>{{ course.description }}</p>
+                            <a href='{% url 'course_details' course.uuid %}'  
+                               class="btn btn-primary">
+                                View
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

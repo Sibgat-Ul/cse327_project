@@ -5,7 +5,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>backend package &mdash; Learning Management System  documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=92fd9be5" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
 
   
@@ -56,7 +56,43 @@
 </li>
 </ul>
 </li>
-<li><a class="reference internal" href="#module-backend.models">backend.models module</a></li>
+<li><a class="reference internal" href="#module-backend.models">backend.models module</a><ul>
+<li><a class="reference internal" href="#backend.models.Course"><code class="docutils literal notranslate"><span class="pre">Course</span></code></a><ul>
+<li><a class="reference internal" href="#backend.models.Course.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Course.DoesNotExist</span></code></a></li>
+<li><a class="reference internal" href="#backend.models.Course.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Course.MultipleObjectsReturned</span></code></a></li>
+<li><a class="reference internal" href="#backend.models.Course.description"><code class="docutils literal notranslate"><span class="pre">Course.description</span></code></a></li>
+<li><a class="reference internal" href="#backend.models.Course.instructor"><code class="docutils literal notranslate"><span class="pre">Course.instructor</span></code></a></li>
+<li><a class="reference internal" href="#backend.models.Course.instructor_id"><code class="docutils literal notranslate"><span class="pre">Course.instructor_id</span></code></a></li>
+<li><a class="reference internal" href="#backend.models.Course.name"><code class="docutils literal notranslate"><span class="pre">Course.name</span></code></a></li>
+<li><a class="reference internal" href="#backend.models.Course.objects"><code class="docutils literal notranslate"><span class="pre">Course.objects</span></code></a></li>
+<li><a class="reference internal" href="#backend.models.Course.students"><code class="docutils literal notranslate"><span class="pre">Course.students</span></code></a></li>
+<li><a class="reference internal" href="#backend.models.Course.uuid"><code class="docutils literal notranslate"><span class="pre">Course.uuid</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#backend.models.User"><code class="docutils literal notranslate"><span class="pre">User</span></code></a><ul>
+<li><a class="reference internal" href="#backend.models.User.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">User.DoesNotExist</span></code></a></li>
+<li><a class="reference internal" href="#backend.models.User.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">User.MultipleObjectsReturned</span></code></a></li>
+<li><a class="reference internal" href="#backend.models.User.age"><code class="docutils literal notranslate"><span class="pre">User.age</span></code></a></li>
+<li><a class="reference internal" href="#backend.models.User.city"><code class="docutils literal notranslate"><span class="pre">User.city</span></code></a></li>
+<li><a class="reference internal" href="#backend.models.User.contact_no"><code class="docutils literal notranslate"><span class="pre">User.contact_no</span></code></a></li>
+<li><a class="reference internal" href="#backend.models.User.country"><code class="docutils literal notranslate"><span class="pre">User.country</span></code></a></li>
+<li><a class="reference internal" href="#backend.models.User.dob"><code class="docutils literal notranslate"><span class="pre">User.dob</span></code></a></li>
+<li><a class="reference internal" href="#backend.models.User.email"><code class="docutils literal notranslate"><span class="pre">User.email</span></code></a></li>
+<li><a class="reference internal" href="#backend.models.User.first_name"><code class="docutils literal notranslate"><span class="pre">User.first_name</span></code></a></li>
+<li><a class="reference internal" href="#backend.models.User.get_next_by_dob"><code class="docutils literal notranslate"><span class="pre">User.get_next_by_dob()</span></code></a></li>
+<li><a class="reference internal" href="#backend.models.User.get_previous_by_dob"><code class="docutils literal notranslate"><span class="pre">User.get_previous_by_dob()</span></code></a></li>
+<li><a class="reference internal" href="#backend.models.User.get_role_display"><code class="docutils literal notranslate"><span class="pre">User.get_role_display()</span></code></a></li>
+<li><a class="reference internal" href="#backend.models.User.instructor"><code class="docutils literal notranslate"><span class="pre">User.instructor</span></code></a></li>
+<li><a class="reference internal" href="#backend.models.User.last_name"><code class="docutils literal notranslate"><span class="pre">User.last_name</span></code></a></li>
+<li><a class="reference internal" href="#backend.models.User.objects"><code class="docutils literal notranslate"><span class="pre">User.objects</span></code></a></li>
+<li><a class="reference internal" href="#backend.models.User.password"><code class="docutils literal notranslate"><span class="pre">User.password</span></code></a></li>
+<li><a class="reference internal" href="#backend.models.User.role"><code class="docutils literal notranslate"><span class="pre">User.role</span></code></a></li>
+<li><a class="reference internal" href="#backend.models.User.students"><code class="docutils literal notranslate"><span class="pre">User.students</span></code></a></li>
+<li><a class="reference internal" href="#backend.models.User.uuid"><code class="docutils literal notranslate"><span class="pre">User.uuid</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a class="reference internal" href="#module-backend.tests">backend.tests module</a></li>
 <li><a class="reference internal" href="#module-backend.views">backend.views module</a></li>
 <li><a class="reference internal" href="#module-backend">Module contents</a></li>
@@ -150,6 +186,246 @@
 </section>
 <section id="module-backend.models">
 <span id="backend-models-module"></span><h2>backend.models module<a class="headerlink" href="#module-backend.models" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="backend.models.Course">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">backend.models.</span></span><span class="sig-name descname"><span class="pre">Course</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/models.html#Course"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.models.Course" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<p>Course Model for storing course details in Database
+uuid: Unique ID of the course
+name: Name of the course
+description: Description of the course
+instructor: Instructor of the course
+students: Students enrolled in the course</p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="backend.models.Course.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#backend.models.Course.DoesNotExist" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="backend.models.Course.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#backend.models.Course.MultipleObjectsReturned" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.models.Course.description">
+<span class="sig-name descname"><span class="pre">description</span></span><a class="headerlink" href="#backend.models.Course.description" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.models.Course.instructor">
+<span class="sig-name descname"><span class="pre">instructor</span></span><a class="headerlink" href="#backend.models.Course.instructor" title="Link to this definition"></a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Child.parent</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.models.Course.instructor_id">
+<span class="sig-name descname"><span class="pre">instructor_id</span></span><a class="headerlink" href="#backend.models.Course.instructor_id" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.models.Course.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#backend.models.Course.name" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.models.Course.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#backend.models.Course.objects" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.models.Course.students">
+<span class="sig-name descname"><span class="pre">students</span></span><a class="headerlink" href="#backend.models.Course.students" title="Link to this definition"></a></dt>
+<dd><p>Accessor to the related objects manager on the forward and reverse sides of
+a many-to-many relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Pizza</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">toppings</span> <span class="o">=</span> <span class="n">ManyToManyField</span><span class="p">(</span><span class="n">Topping</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;pizzas&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Pizza.toppings</span></code> and <code class="docutils literal notranslate"><span class="pre">Topping.pizzas</span></code> are <code class="docutils literal notranslate"><span class="pre">ManyToManyDescriptor</span></code>
+instances.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.models.Course.uuid">
+<span class="sig-name descname"><span class="pre">uuid</span></span><a class="headerlink" href="#backend.models.Course.uuid" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="backend.models.User">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">backend.models.</span></span><span class="sig-name descname"><span class="pre">User</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/models.html#User"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.models.User" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<p>User Model for storing user details in Database
+uuid: Unique ID of the user
+name: Name of the user
+age: Age of the user
+email: Email of the user
+password: Password of the user
+country: Country of the user
+city: City of the user
+role: Role of the user
+contact_no: Contact number of the user</p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="backend.models.User.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#backend.models.User.DoesNotExist" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="backend.models.User.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#backend.models.User.MultipleObjectsReturned" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.models.User.age">
+<span class="sig-name descname"><span class="pre">age</span></span><a class="headerlink" href="#backend.models.User.age" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.models.User.city">
+<span class="sig-name descname"><span class="pre">city</span></span><a class="headerlink" href="#backend.models.User.city" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.models.User.contact_no">
+<span class="sig-name descname"><span class="pre">contact_no</span></span><a class="headerlink" href="#backend.models.User.contact_no" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.models.User.country">
+<span class="sig-name descname"><span class="pre">country</span></span><a class="headerlink" href="#backend.models.User.country" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.models.User.dob">
+<span class="sig-name descname"><span class="pre">dob</span></span><a class="headerlink" href="#backend.models.User.dob" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.models.User.email">
+<span class="sig-name descname"><span class="pre">email</span></span><a class="headerlink" href="#backend.models.User.email" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.models.User.first_name">
+<span class="sig-name descname"><span class="pre">first_name</span></span><a class="headerlink" href="#backend.models.User.first_name" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.models.User.get_next_by_dob">
+<span class="sig-name descname"><span class="pre">get_next_by_dob</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.fields.DateField:</span> <span class="pre">dob&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#backend.models.User.get_next_by_dob" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.models.User.get_previous_by_dob">
+<span class="sig-name descname"><span class="pre">get_previous_by_dob</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.fields.DateField:</span> <span class="pre">dob&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#backend.models.User.get_previous_by_dob" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.models.User.get_role_display">
+<span class="sig-name descname"><span class="pre">get_role_display</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.fields.CharField:</span> <span class="pre">role&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#backend.models.User.get_role_display" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.models.User.instructor">
+<span class="sig-name descname"><span class="pre">instructor</span></span><a class="headerlink" href="#backend.models.User.instructor" title="Link to this definition"></a></dt>
+<dd><p>Accessor to the related objects manager on the reverse side of a
+many-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Parent.children</span></code> is a <code class="docutils literal notranslate"><span class="pre">ReverseManyToOneDescriptor</span></code> instance.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.models.User.last_name">
+<span class="sig-name descname"><span class="pre">last_name</span></span><a class="headerlink" href="#backend.models.User.last_name" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.models.User.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#backend.models.User.objects" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.models.User.password">
+<span class="sig-name descname"><span class="pre">password</span></span><a class="headerlink" href="#backend.models.User.password" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.models.User.role">
+<span class="sig-name descname"><span class="pre">role</span></span><a class="headerlink" href="#backend.models.User.role" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.models.User.students">
+<span class="sig-name descname"><span class="pre">students</span></span><a class="headerlink" href="#backend.models.User.students" title="Link to this definition"></a></dt>
+<dd><p>Accessor to the related objects manager on the forward and reverse sides of
+a many-to-many relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Pizza</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">toppings</span> <span class="o">=</span> <span class="n">ManyToManyField</span><span class="p">(</span><span class="n">Topping</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;pizzas&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Pizza.toppings</span></code> and <code class="docutils literal notranslate"><span class="pre">Topping.pizzas</span></code> are <code class="docutils literal notranslate"><span class="pre">ManyToManyDescriptor</span></code>
+instances.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.models.User.uuid">
+<span class="sig-name descname"><span class="pre">uuid</span></span><a class="headerlink" href="#backend.models.User.uuid" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 <section id="module-backend.tests">
 <span id="backend-tests-module"></span><h2>backend.tests module<a class="headerlink" href="#module-backend.tests" title="Link to this heading"></a></h2>

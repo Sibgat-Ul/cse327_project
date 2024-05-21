@@ -1,0 +1,119 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %} {% endblock %}
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <style>
+                /* Set body to full viewport height */
+        body, html {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            background-color: #e0e0e0;
+        }
+        .sidebar {
+            background-color: #343a40; /* Dark background color */
+            color: white;
+            padding: 0;
+        }
+        .sidebar-btn {
+            background-color: var(--bs-primary); /* Dark background color for buttons */
+            border: none;
+            color: white;
+            padding: 10px 15px;
+            text-align: center;
+            display: block;
+            width: 100%;
+            text-decoration: none;
+            border-radius: .5em;
+        }
+        
+        .sidebar-btn.active {
+            background-color: #495057; /* Darken the active button */
+        }
+        
+        .sidebar-btn:hover {
+            background-color: #495057; /* Darken button on hover */
+            color:white
+        }
+        .content {
+            padding: 20px; /* Add padding to the content */
+        }
+        
+        ul, li, li > a {
+            text-align: center;
+            color: white
+        }
+        
+        .top-navbar {
+            width: 100%;
+        }
+        
+        .container-fluid {
+            padding: 0px;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary px-5">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Dashboard</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+      <button onclick="logout()" class="btn btn-danger mx-2">Logout</button>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <div class="row my-2" style="margin: auto; padding: 0">
+    <div class="col-md-2 sidebar overflow-hidden rounded-2 mx-lg-2">
+      <ul class="nav navbar-dark bg-dark sidenav flex-column gap-2 px-3 py-2 h-100">
+        <li style="height: 3em">
+            <h3>
+                Menu
+            </h3>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link sidebar-btn active" href="#">Courses</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link sidebar-btn" href="#">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link sidebar-btn" href="#">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link sidebar-btn" href="#">Settings</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-md-9 bg-white rounded-2" style="padding: 1em;"> 
+        {% block content %}
+            <h1 style="font-size: 32px;">Welcome to the Dashboard</h1> 
+        {% endblock %}
+    </div>
+  
+  </div>
+</div>    
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+</body>
+</html>

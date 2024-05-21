@@ -1,0 +1,27 @@
+{% extends 'backend/base_files/base_login_reg.html' %}
+
+{% block title %} Login {% endblock %}
+
+{% block content %} 
+        {% csrf_token %}
+        <div class="col-md-6">
+            <input type="email" id="email" placeholder="Enter your email" class="form-control" aria-description="Email">
+        </div>
+        <div class="col-md-6">
+            <input type="password" id="password" placeholder="Enter your password" class="form-control" aria-description="Password">
+        </div>
+        
+        <div class="col-md-6 text-start">
+           {% for choices in form.role %}
+               <div class="form-check">
+                   <input type="radio" id="role" name="role" class="form-check-input">
+                   <label class="form-check-label" for="role">
+                      {{ choices }} 
+                   </label> 
+                </div>
+           {%  endfor %}
+        </div>
+        
+        <button type="submit" class="w-50 btn btn-primary">Login</button>
+    <a href="{% url 'register' %}">Register</a>
+{% endblock %}

@@ -1,5 +1,5 @@
 from backend.all_class.user_class.users import User
-
+from backend.all_class.course_class import Course
 
 class Instructor(User):
     """

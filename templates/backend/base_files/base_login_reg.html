@@ -10,7 +10,16 @@
 </head>
 <body>
     <div class="container">
-        {% block content %} {% endblock %}
+        {% csrf_token %}
+        <form
+                method="post"
+                class="w-50 m-auto row g-3 text-center"
+                action="{% url 'login' %}"
+                style="height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;"
+        >
+
+            {% block content %} {% endblock %}
+        </form>
     </div>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
 </body>

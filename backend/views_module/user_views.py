@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from backend.models import User, Course
-from backend.forms import UserForm
+from backend.forms import UserForm, LoginForm
 
 
 def login(request):
@@ -16,7 +16,7 @@ def login(request):
         user = User.objects.get(username=username, password=password)
         if user:
             return redirect('home')
-    return render(request, 'backend/users/login.html')
+    return render(request, 'backend/users/login.html', context={'form': LoginForm})
 
 
 def register(request):
@@ -32,6 +32,7 @@ def register(request):
         if form.is_valid():
             form.save()
             return redirect('view_users')
+        
     context = {
         'form': form
     }

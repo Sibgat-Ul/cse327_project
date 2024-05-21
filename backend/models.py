@@ -15,7 +15,7 @@ class User(models.Model):
     contact_no: Contact number of the user
     """
 
-    uuid = models.UUIDField(primary_key=True, editable=False)
+    id = models.BigAutoField(primary_key=True)
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     age = models.IntegerField()
@@ -43,7 +43,7 @@ class Course(models.Model):
     students: Students enrolled in the course
     """
 
-    uuid = models.UUIDField(primary_key=True, editable=False)
+    id = models.BigAutoField(primary_key=True)
     name = models.CharField(max_length=50)
     description = models.TextField()
     instructor = models.ForeignKey(User, on_delete=models.CASCADE, related_name='instructor')

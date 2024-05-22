@@ -19,3 +19,17 @@ from backend.views_module.user_views import (
     instructor_view
 )
 
+# Import necessary modules from Django and the Event model
+
+from .models import Event
+from django.http import JsonResponse
+
+# Define a view to render the calendar template
+def calendar_view(request):
+    return render(request, 'calendar_app/index.html')
+
+# Define a view to fetch events from the database and return them as JSON
+def get_events(request):
+    events = Event.objects.all()
+    event_list = [{"date": event.date.strftime("%Y-%m-%d"), "name": event.name} for event in events]
+    return JsonResponse(event_list, safe=False)

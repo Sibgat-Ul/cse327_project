@@ -25,3 +25,10 @@ urlpatterns = [
 
     # Handle courses
 ]
+
+
+# Define URL patterns for the calendar view and event fetching API
+urlpatterns = [
+    path('', views.calendar_view, name='calendar'),
+    path('api/events/', views.get_events, name='get_events'),
+]

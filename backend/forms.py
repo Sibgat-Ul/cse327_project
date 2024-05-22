@@ -1,5 +1,5 @@
 from django.forms import Form, CharField, ChoiceField, RadioSelect, IntegerField, DateField, ModelForm
-from .models import User, Course
+from .models import User, Course ,Announcement
 
 
 class UserForm(ModelForm):
@@ -46,3 +46,8 @@ class RegisterForm(ModelForm):
     class Meta:
         model = User
         fields = '__all__'
+
+class AnnouncementForm(ModelForm):
+    class Meta:
+        model = Announcement
+        fields = ['title', 'description', 'course']

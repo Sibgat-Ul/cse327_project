@@ -32,3 +32,10 @@ urlpatterns = [
     path('', views.calendar_view, name='calendar'),
     path('api/events/', views.get_events, name='get_events'),
 ]
+
+
+# Define the URL pattern for the student list view
+urlpatterns = [
+    path('', views.student_list, name='student_list'),
+]
+

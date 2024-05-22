@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student List</title>
+    <link rel="stylesheet" href="{% static 'admin/studentList.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Course Student List</h1>
+        <ul id="studentList">
+            {% for student in students %}
+            <li>
+                <div class="student-info">
+                    <span>{{ student.name }}</span>
+                    <span>{{ student.email }}</span>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

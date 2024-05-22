@@ -62,3 +62,12 @@ class Event(models.Model):
     # String representation of the model to show the event name and date
     def __str__(self):
         return f"{self.name} on {self.date}"  
+    
+    
+# Define the Student model with name and email fields
+class Student(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+
+    def __str__(self):
+        return self.name

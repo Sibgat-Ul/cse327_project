@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Screen Calendar with Events</title>
+    <link rel="stylesheet" href="{% static 'lms_backend_327/styles.css' %}">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container-calendar">
+            <h3 id="monthAndYear"></h3>
+            <div class="button-container-calendar">
+                <button id="previous">&#8249;</button>
+                <button id="next">&#8250;</button>
+            </div>
+            <table class="table-calendar" id="calendar" data-lang="en">
+                <thead id="thead-month"></thead>
+                <tbody id="calendar-body"></tbody>
+            </table>
+        </div>
+        <div class="sidebar" id="sidebar">
+            <h3>Events</h3>
+            <div id="event-list"></div>
+        </div>
+    </div>
+    <script src="{% static 'lms_backend_327/calender.js' %}"></script>
+</body>
+</html>

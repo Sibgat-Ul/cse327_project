@@ -50,3 +50,15 @@ class Course(models.Model):
 
     def __str__(self):
         return f'Course Name: {self.name} \nInstructor: {self.instructor.first_name + ' ' + self.instructor.last_name}'
+
+
+ # Define the Event model to store event data in the database
+class Event(models.Model):
+    # Date field to store the date of the event
+    date = models.DateField()
+    # CharField to store the name of the event with a maximum length of 100 characters
+    name = models.CharField(max_length=100)
+
+    # String representation of the model to show the event name and date
+    def __str__(self):
+        return f"{self.name} on {self.date}"  

@@ -4,16 +4,24 @@ from . import views
 
 urlpatterns = [
     # Handle users
-    path('', views.home, name='home'),
+    path('', views.login, name='login'),
     path('login', views.login, name='login'),
     path('register', views.register, name='register'),
     path('logout', views.logout, name='logout'),
 
+    # Handle students
+    path('students/<int:id>/view', views.student_view, name='students'),
+    path('students/<int:id>/courses/enroll', views.enroll, name='enroll'),
+    path('students/<int:id>/courses/<int:course_id>/details', views.course_details, name='course_details'),
+
+    # Handle instructors
+    path('instructors/<int:id>/view', views.instructor_view, name='instructors'),
+    path('instructors/<int:id>/courses', views.view_course_list, name='view_course_list'),
+    path('instructors/<int:id>/courses/<int:course_id>/details', views.course_details, name='course_details'),
+    path('instructors/<int:id>/courses/add', views.add_course, name='add_course'),
+    path('instructors/<int:id>/courses/<int:course_id>/edit', views.edit_course, name='edit_course'),
+    path('instructors/<int:id>/courses/<int:course_id>/delete', views.delete_course, name='delete_course'),
+
+
     # Handle courses
-    path('courses', views.view_course_list, name='courses'),
-    path('courses/add_course', views.add_course, name='add_course'),
-    path('courses/<int:id>/course_details', views.course_details, name='course_details'),
-    path('courses/<int:id>/edit_course', views.edit_course, name='edit_course'),
-    path('courses/<int:id>/delete_course', views.delete_course, name='delete_course'),
-    path('courses/<int:id>/enroll', views.enroll, name='enroll'),
 ]

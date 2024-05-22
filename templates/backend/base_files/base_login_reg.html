@@ -9,13 +9,25 @@
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
 </head>
 <body>
+    <div class="header navbar bg-dark text-white w-100 text-center" style="height: 4em;">
+        <h5 class="m-auto text-center"> 
+            Welcome to the Learning Management System
+        </h5>
+    </div>
+    
     <div class="container">
         {% csrf_token %}
+        <header class="text-center w-100 ">
+            <h4 class="text-center my-2">
+                {% block header %} {% endblock %}
+            </h4>
+        </header>
+    
         <form
                 method="post"
                 class="w-50 m-auto row g-3 text-center"
-                action="{% url 'login' %}"
-                style="height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;"
+                action="{% block form_action %} {% endblock %}"
+                
         >
 
             {% block content %} {% endblock %}

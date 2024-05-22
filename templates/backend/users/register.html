@@ -2,13 +2,42 @@
 
 {% block title %} Registration {% endblock %}
 
+{% block header %} Register {% endblock %}
+
+{% block form_action %}{% url 'register' %}{% endblock %}
+
 {% block content %}
-    {% for field in form %}
-        <div class="col-md-6 col-md-offset-3">
-                <div class="form-row">
-                    {{ field.errors }}
-                    {{ field }}
-                </div>
-        </div>
-    {% endfor %}
+    <div class="col-md-6">
+       {{ form.first_name }} 
+    </div>
+    <div class="col-md-6">
+        {{ form.last_name }}
+    </div>
+    <div class="col-md-8">
+        {{ form.email }}
+    </div>
+    <div class="col-md-4">
+        {{ form.dob }}
+    </div>
+    <div class="col-12">
+        {{ form.password }}
+    </div>
+    <div class="col-md-6">
+        {{ form.contact_no }}
+    </div>
+    <div class="col-md-4">
+        {{ form.country }}
+    </div>
+    <div class="col-md-2">
+        {{ form.city }}
+    </div>
+    <div class="col-12">
+        {{ form.role }}
+    </div>
+    
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary">Register</button>
+        <br>
+        <a href="{% url 'login' %}">Already have an account?</a>
+    </div>
 {% endblock %}

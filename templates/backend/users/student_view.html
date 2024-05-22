@@ -1,10 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'backend/base_files/base_dashboard.html' %}
 
-</body>
-</html>
+{% block top_nav_item %}
+    <li class="nav-item">
+        <a class="nav-link" href="#">
+            Enroll Course
+        </a>
+    </li>
+    
+    <li class="nav-item">
+        <a class="nav-link" href="#">
+            Chat
+        </a>
+    </li>
+    
+    <li>
+        <button class="btn">
+            Attendance
+        </button>
+    </li>
+    
+    <li class="nav-item">
+        <button class="btn">
+            Assignment
+        </button>
+    </li>
+{% endblock %}
+
+{% block content %}
+
+    <div class="container p-1">
+        <div class="row">
+            {% for course in courses %}
+                <div class="col-md-4 col-lg-4">
+                    <div class="card">
+                        <div class="card-header">
+                            {{ course.name }}
+                        </div>
+                        <div class="card-body">
+                            <p>{{ course.description }}</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="btn btn-primary">View</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

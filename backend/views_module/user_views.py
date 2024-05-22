@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from backend.models import User, Course
-from backend.forms import UserForm, LoginForm
+from backend.forms import  LoginForm, RegisterForm
 
 
 def login(request):
@@ -26,9 +26,9 @@ def register(request):
     :param request:
     :return:
     """
-    form = UserForm()
+    form = RegisterForm()
     if request.method == 'POST':
-        form = UserForm(request.POST)
+        form = RegisterForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect('view_users')
@@ -39,15 +39,35 @@ def register(request):
     return render(request, 'backend/users/register.html', context)
 
 
-def home(request):
+def student_view(request, id):
     """
-    Home page
+    View student details
 
-    :param request:
+    :param request: Request type
+    :param id: Student's ID
     :return:
     """
-    return render(request, 'backend/home.html')
+    courses = Course.objects.filter(students=id)
 
+    context = {
+        'courses': courses
+    }
+    return render(request, 'backend/users/student_view.html', context)
+
+
+def instructor_view(request, id):
+    """
+    View instructor details
+
+    :param request:
+    :param id:
+    :return:
+    """
+    instructor = User.objects.get(id=id, role='instructor')
+    context = {
+        'instructor': instructor
+    }
+    return render(request, 'backend/users/instructor_view.html', context)
 
 def logout(request):
     """

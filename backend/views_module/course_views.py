@@ -2,16 +2,16 @@ from django.shortcuts import render, redirect
 from backend.models import User, Course
 
 
-def view_course_list(request):
+def view_course_list(request, id, role):
     """
     View courses list
 
     :param request:
     :return:
     """
-    courses = Course.objects.all()
+    courses = Course.objects.get(instructor_id=id)
     context = {
-        'courses': courses
+        'courses': [courses]
     }
     return render(request, 'backend/courses/course_list.html', context)
 

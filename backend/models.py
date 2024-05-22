@@ -4,7 +4,7 @@ from django.db import models
 class User(models.Model):
     """
     User Model for storing user details in Database
-    uuid: Unique ID of the user
+    id: Unique ID of the user
     name: Name of the user
     age: Age of the user
     email: Email of the user
@@ -15,10 +15,9 @@ class User(models.Model):
     contact_no: Contact number of the user
     """
 
-    id = models.BigAutoField(primary_key=True)
+    id = models.BigAutoField(primary_key=True, default=0)
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
-    age = models.IntegerField()
     dob = models.DateField()
     email = models.EmailField(unique=True)
     password = models.CharField(max_length=50)
@@ -36,7 +35,7 @@ class User(models.Model):
 class Course(models.Model):
     """
     Course Model for storing course details in Database
-    uuid: Unique ID of the course
+    id: Unique ID of the course
     name: Name of the course
     description: Description of the course
     instructor: Instructor of the course

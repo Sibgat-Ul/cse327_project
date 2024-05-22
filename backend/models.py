@@ -55,7 +55,7 @@ class Course(models.Model):
 
 class Announcement(models.Model):
     """
-    Model representing an announcement for a course.
+    Announcement Model for storing course details in Database
 
     Attributes:
         title (str): The title of the announcement.

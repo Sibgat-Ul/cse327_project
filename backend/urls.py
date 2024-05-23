@@ -16,4 +16,14 @@ urlpatterns = [
     path('courses/<int:id>/edit_course', views.edit_course, name='edit_course'),
     path('courses/<int:id>/delete_course', views.delete_course, name='delete_course'),
     path('courses/<int:id>/enroll', views.enroll, name='enroll'),
+
+    # Handle Assessments
+    path('assessments/', views.AssessmentListView.as_view(), name='assessment_list'),
+    path('assessments/<int:pk>/', views.AssessmentDetailView.as_view(), name='assessment_detail'),
+    path('assessments/create/', views.AssessmentCreateView.as_view(), name='assessment_create'),
+    
+    # Handle Assessments
+    path('assessments/<int:assessment_id>/submit/', views.submit_assessment, name='submit_assessment'),
+    path('submission/<int:submission_id>/', views.view_submission, name='view_submission'),
+
 ]

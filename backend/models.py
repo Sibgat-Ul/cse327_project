@@ -1,4 +1,5 @@
 from django.db import models
+from django.conf import settings
 
 
 class User(models.Model):
@@ -51,3 +52,69 @@ class Course(models.Model):
 
     def __str__(self):
         return f'Course Name: {self.name} \nInstructor: {self.instructor.first_name + ' ' + self.instructor.last_name}'
+    
+
+"""
+Models for the LMS application.
+
+This module contains the models for handling assessments and their submissions.
+
+Classes:
+    AssessmentModel
+    AssessmentSubmission
+"""
+
+
+
+
+
+class Assessment(models.Model):
+    """
+    A model to represent an assessment.
+
+    Attributes
+    ----------
+    title : str
+        The title of the assessment.
+    description : str
+        A description of the assessment.
+    deadline : datetime
+        The deadline for the assessment.
+    course : Course
+        The course to which the assessment belongs.
+    questions : File
+        The file containing the assessment questions.
+    submissions : ManyToManyField
+        The student submissions related to this assessment.
+    """
+    title = models.CharField(max_length=255)
+    description = models.TextField()
+    deadline = models.DateTimeField()
+    course = models.ForeignKey('Course', on_delete=models.CASCADE)
+    questions = models.FileField(upload_to='assessments/questions/')
+    submissions = models.ManyToManyField(
+        settings.AUTH_USER_MODEL, 
+        through='AssessmentSubmission', 
+        related_name='assessment_submissions'
+    )
+
+
+class AssessmentSubmission(models.Model):
+    """
+    A model to represent a student's assessment submission.
+
+    Attributes
+    ----------
+    assessment : ForeignKey
+        The assessment being submitted.
+    student : ForeignKey
+        The student submitting the assessment.
+    submission_file : File
+        The file containing the student's submission.
+    submitted_at : datetime
+        The date and time the submission was made.
+    """
+    assessment = models.ForeignKey(Assessment, on_delete=models.CASCADE)
+    student = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    submission_file = models.FileField(upload_to='assessments/submissions/')
+    submitted_at = models.DateTimeField(auto_now_add=True)

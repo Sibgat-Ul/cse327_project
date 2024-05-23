@@ -1,128 +1,150 @@
-from backend.all_class.course_class import Course
+from backend.all_class.course_class import Course 
+from .assessmentSubmission import AssessmentSubmission
+from datetime import datetime
+from django.core.files import File
+
+
+
+
+
 
 
 class Assessment:
     """
-    Represents an assessment that belongs to a course and contains a list of questions.
+    A class used to represent an Assessment.
+
+    Attributes
+    ----------
+    title : str
+        the title of the assessment
+    description : str
+        the description of the assessment
+    deadline : datetime
+        the deadline of the assessment
+    course : Course
+        the course to which the assessment belongs
+    questions : File
+        the questions file of the assessment
+
+    Methods
+    -------
+    getTitle()
+        Returns the title of the assessment.
+    setTitle(title)
+        Sets the title of the assessment.
+    getDescription()
+        Returns the description of the assessment.
+    setDescription(description)
+        Sets the description of the assessment.
+    getDeadline()
+        Returns the deadline of the assessment.
+    setDeadline(deadline)
+        Sets the deadline of the assessment.
+    getCourse()
+        Returns the course of the assessment.
+    setCourse(course)
+        Sets the course of the assessment.
+    getQuestions()
+        Returns the questions file of the assessment.
+    setQuestions(questions)
+        Sets the questions file of the assessment.
+    createAssessment()
+        Saves the assessment.
+    viewAssessment()
+        Returns the assessment instance.
+    submitAssessment()
+        Placeholder for assessment submission logic.
     """
 
-    def __init__(self, title, description, deadline, course, file_path):
-        """
-        Represents an assessment that belongs to a course and contains a list of questions.
-
-        :param title: The title of the assessment.
-        :type title: str
-        :param description: The description of the assessment.
-        :type description: str
-        :param deadline: The deadline of the assessment.
-        :type deadline: datetime.date
-        :param course: The course to which the assessment belongs.
-        :type course: Course
-        :param file_path: The path to the file containing questions (PDF, DOC, TXT).
-        :type file_path: str
-        """
+    def __init__(self, title, description, deadline, course, questions):
         self.title = title
         self.description = description
         self.deadline = deadline
         self.course = course
-        self.file_path = file_path
-        self.status = None
+        self.questions = questions
 
     def getTitle(self):
-        """
-        Get the title of the assessment.
-
-        :return: The title of the assessment.
-        :rtype: str
-        """
         return self.title
 
     def setTitle(self, title):
-        """
-        Set the title of the assessment.
-
-        :param title: The new title for the assessment.
-        :type title: str
-        """
         self.title = title
 
     def getDescription(self):
-        """
-        Get the description of the assessment.
-
-        :return: The description of the assessment.
-        :rtype: str
-        """
         return self.description
 
     def setDescription(self, description):
-        """
-        Set the description of the assessment.
-
-        :param description: The new description for the assessment.
-        :type description: str
-        """
         self.description = description
 
     def getDeadline(self):
-        """
-        Get the deadline of the assessment.
-
-        :return: The deadline of the assessment.
-        :rtype: datetime.date
-        """
         return self.deadline
 
     def setDeadline(self, deadline):
-        """
-        Set the deadline of the assessment.
-
-        :param deadline: The new deadline for the assessment.
-        :type deadline: datetime.date
-        """
         self.deadline = deadline
 
     def getCourse(self):
-        """
-        Get the course to which the assessment belongs.
-
-        :return: The course to which the assessment belongs.
-        :rtype: Course
-        """
         return self.course
 
     def setCourse(self, course):
-        """
-        Set the course to which the assessment belongs.
-
-        :param course: The new course for the assessment.
-        :type course: Course
-        """
         self.course = course
 
     def getQuestions(self):
-        """
-        Get the list of questions associated with the assessment.
-
-        :return: The list of questions associated with the assessment.
-        :rtype: list[Question]
-        """
         return self.questions
 
-    def getStatus(self):
-        """
-        Get the status of the assessment.
+    def setQuestions(self, questions):
+        self.questions = questions
 
-        :return: The status of the assessment.
-        :rtype: AssignmentStatus
+    def createAssessment(self):
         """
-        return self.status
+        Saves the assessment to the database.
+        """
+        assessment = Assessment(
+            title=self.title,
+            description=self.description,
+            deadline=self.deadline,
+            course=self.course,
+            questions=self.questions
+        )
+        assessment.save()
 
-    def setStatus(self, status):
+    def viewAssessment(self, assessment_id):
         """
-        Set the status of the assessment.
+        Retrieves the assessment instance from the database.
 
-        :param status: The new status for the assessment.
-        :type status: AssignmentStatus
+        Parameters
+        ----------
+        assessment_id : int
+            The ID of the assessment to retrieve.
+
+        Returns
+        -------
+        AssessmentModel
+            The assessment instance.
         """
-        self.status = status
+        return Assessment.objects.get(id=assessment_id)
+
+    def submitAssessment(self, assessment_id, student, submission_file):
+        """
+        Submits an assessment by saving the submission to the database.
+
+        Parameters
+        ----------
+        assessment_id : int
+            The ID of the assessment being submitted.
+        student : User
+            The student who is submitting the assessment.
+        submission_file : File
+            The file being submitted.
+
+        Returns
+        -------
+        AssessmentSubmission
+            The created assessment submission instance.
+        """
+        assessment = self.viewAssessment(assessment_id)
+        submission = AssessmentSubmission(
+            assessment=assessment,
+            student=student,
+            submission_file=submission_file
+        )
+        submission.save()
+        return submission

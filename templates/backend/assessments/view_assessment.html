@@ -1,0 +1,21 @@
+{% extends 'backend/base_files/base_course.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/view_assessment_style.css' %}">
+{% endblock %}
+
+{% block content %}
+  <h2>{{ assessment.title }}</h2>
+  <p>{{ assessment.description }}</p>
+  <p>Deadline: {{ assessment.deadline }}</p>
+  <p>Course: {{ assessment.course.name }}</p>
+  <p>Questions: <a id="download-link" href="{{ assessment.questions.url }}">Download</a></p>
+  {% if user.role == 'student' %}
+    <a href="{% url 'submit_assessment' assessment.id %}">Submit Assessment</a>
+  {% endif %}
+{% endblock %}
+
+{% block javascript %}
+<script src="{% static 'js/view_assessment_script.js' %}"></script>
+{% endblock %}

@@ -47,7 +47,8 @@ class RegisterForm(ModelForm):
         model = User
         fields = '__all__'
 
+
 class AnnouncementForm(ModelForm):
     class Meta:
         model = Announcement
-        fields = ['title', 'description', 'course']
+        fields = ['title', 'description', 'date', 'course']

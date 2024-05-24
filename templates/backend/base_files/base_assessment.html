@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Assessment Dashboard{% endblock %}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 1em;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 1em;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('JavaScript is loaded and running!');
+            // Add more JavaScript functionality as needed
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>{% block header %}Assessment Dashboard{% endblock %}</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'create_assessment' course_id=1 %}">Create Assessment</a></li>
+                <li><a href="{% url 'view_marks' %}">View Marks</a></li>
+                <li><a href="{% url 'view_assessment' assignment_id=1 %}">View Assessment</a></li>
+                <li><a href="{% url 'submit_assessment' assignment_id=1 %}">Submit Assessment</a></li>
+                <li><a href="{% url 'view_submission' submission_id=1 %}">View Submission</a></li>
+                <li><a href="{% url 'assign_marks' submission_id=1 %}">Assign Marks</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        <!-- Content specific to each view will be rendered here -->
+        {% endblock %}
+    </main>
+    
+</body>
+</html>

@@ -1,0 +1,12 @@
+{% extends 'base_assessment_dashboard.html' %}
+
+{% block title %}Assign Marks{% endblock %}
+
+{% block content %}
+    <h2>Assign Marks for {{ submission.student.username }}'s Submission</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Assign Marks</button>
+    </form>
+{% endblock %}

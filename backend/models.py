@@ -54,67 +54,47 @@ class Course(models.Model):
         return f'Course Name: {self.name} \nInstructor: {self.instructor.first_name + ' ' + self.instructor.last_name}'
     
 
-"""
-Models for the LMS application.
-
-This module contains the models for handling assessments and their submissions.
-
-Classes:
-    AssessmentModel
-    AssessmentSubmission
-"""
 
 
 
 
-
-class Assessment(models.Model):
+class Assignment(models.Model):
     """
-    A model to represent an assessment.
+    Represents an assignment within a course.
 
-    Attributes
-    ----------
-    title : str
-        The title of the assessment.
-    description : str
-        A description of the assessment.
-    deadline : datetime
-        The deadline for the assessment.
-    course : Course
-        The course to which the assessment belongs.
-    questions : File
-        The file containing the assessment questions.
-    submissions : ManyToManyField
-        The student submissions related to this assessment.
+    Attributes:
+        title (str): The title of the assignment.
+        description (str): A detailed description of the assignment.
+        deadline (date): The due date for the assignment.
+        course (ForeignKey): The course to which the assignment belongs.
+        file (FileField): The file associated with the assignment.
     """
     title = models.CharField(max_length=255)
     description = models.TextField()
-    deadline = models.DateTimeField()
-    course = models.ForeignKey('Course', on_delete=models.CASCADE)
-    questions = models.FileField(upload_to='assessments/questions/')
-    submissions = models.ManyToManyField(
-        settings.AUTH_USER_MODEL, 
-        through='AssessmentSubmission', 
-        related_name='assessment_submissions'
-    )
+    deadline = models.DateField()
+    course = models.ForeignKey(Course, on_delete=models.CASCADE, related_name='assignments')
+    file = models.FileField(upload_to='assignments/')
+
+    def __str__(self):
+        return self.title
 
 
-class AssessmentSubmission(models.Model):
+class Submission(models.Model):
     """
-    A model to represent a student's assessment submission.
+    Represents a student's submission for an assignment.
 
-    Attributes
-    ----------
-    assessment : ForeignKey
-        The assessment being submitted.
-    student : ForeignKey
-        The student submitting the assessment.
-    submission_file : File
-        The file containing the student's submission.
-    submitted_at : datetime
-        The date and time the submission was made.
+    Attributes:
+        student (ForeignKey): The student who made the submission.
+        assignment (ForeignKey): The assignment being submitted.
+        submission_date (date): The date the submission was made.
+        file (FileField): The file associated with the submission.
+        marks (int): The marks awarded for the submission.
     """
-    assessment = models.ForeignKey(Assessment, on_delete=models.CASCADE)
-    student = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    submission_file = models.FileField(upload_to='assessments/submissions/')
-    submitted_at = models.DateTimeField(auto_now_add=True)
+    student = models.ForeignKey(User, on_delete=models.CASCADE, related_name='submissions')
+    assignment = models.ForeignKey(Assignment, on_delete=models.CASCADE, related_name='submissions')
+    submission_date = models.DateField(auto_now_add=True)
+    file = models.FileField(upload_to='submissions/')
+    marks = models.IntegerField(null=True, blank=True)
+
+    def __str__(self):
+        return f"{self.student.username} - {self.assignment.title}"

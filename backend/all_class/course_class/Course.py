@@ -90,3 +90,11 @@ class Course:
         :return: None
         """
         self.course_assignment.append(course_assignment)
+
+    def get_course_assignment(self) -> list:
+        """
+        Get course material of course
+
+        :return: List of course material
+        """
+        return self.course_assignment

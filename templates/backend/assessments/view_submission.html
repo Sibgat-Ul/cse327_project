@@ -1,0 +1,10 @@
+{% extends 'base_assessment_dashboard.html' %}
+
+{% block title %}View Submission{% endblock %}
+
+{% block content %}
+    <h2>Submission by {{ submission.student.username }}</h2>
+    <p>Submitted on: {{ submission.submission_date }}</p>
+    <p><a href="{{ submission.file.url }}">Download Submission</a></p>
+    <p>Marks: {{ submission.marks }}</p>
+{% endblock %}

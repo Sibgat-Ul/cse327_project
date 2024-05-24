@@ -1,19 +1,13 @@
-{% extends 'backend/base_files/base_course.html' %}
-{% load static %}
+{% extends 'base_assessment_dashboard.html' %}
 
-{% block css %}
-<link rel="stylesheet" href="{% static 'css/submit_assessment_style.css' %}">
-{% endblock %}
+{% block title %}Submit Assessment{% endblock %}
 
 {% block content %}
-  <h2>Submit Assessment</h2>
-  <form id="submit-assessment-form" method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Submit</button>
-  </form>
-{% endblock %}
-
-{% block javascript %}
-<script src="{% static 'js/submit_assessment_script.js' %}"></script>
+    <h2>Submit Assessment: {{ assignment.title }}</h2>
+    <p>{{ description }}</p>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
 {% endblock %}

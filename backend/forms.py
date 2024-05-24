@@ -1,5 +1,5 @@
 from django.forms import Form, CharField, ChoiceField, IntegerField, DateField, ModelForm
-from .models import User, Course , Assessment , AssessmentSubmission
+from .models import User, Course , Assignment, Submission 
 from django.utils import timezone
 
 
@@ -40,33 +40,30 @@ class RegisterForm(ModelForm):
         model = User
         fields = '__all__'
 
-class AssessmentForm(ModelForm):
-    
-    
-    class Meta:
-        model = Assessment
-        fields = '__all__'
 
-class AssessmentSubmissionForm(ModelForm):
+
+class AssignmentForm(ModelForm):
     """
-    Form for submitting an assessment.
+    Form for creating a new assignment.
     """
     class Meta:
-        model = AssessmentSubmission
-        fields = ['submittedFile']
-        
-    def __init__(self, *args, **kwargs):
-        self.student = kwargs.pop('student', None)
-        self.assessment = kwargs.pop('assessment', None)
-        self.course = kwargs.pop('course', None)
-        super().__init__(*args, **kwargs)
-    
-    def save(self, commit=True):
-        submission = super().save(commit=False)
-        submission.submittedBy = self.student
-        submission.assessment = self.assessment
-        submission.course = self.course
-        submission.submissionDateTime = timezone.now()
-        if commit:
-            submission.save()
-        return submission
+        model = Assignment
+        fields = ['title', 'description', 'deadline', 'file']
+
+
+class SubmissionForm(ModelForm):
+    """
+    Form for submitting an assignment.
+    """
+    class Meta:
+        model = Submission
+        fields = ['file']
+
+
+class MarksForm(ModelForm):
+    """
+    Form for assigning marks to a submission.
+    """
+    class Meta:
+        model = Submission
+        fields = ['marks']

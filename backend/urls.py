@@ -18,12 +18,12 @@ urlpatterns = [
     path('courses/<int:id>/enroll', views.enroll, name='enroll'),
 
     # Handle Assessments
-    path('assessments/', views.AssessmentListView.as_view(), name='assessment_list'),
-    path('assessments/<int:pk>/', views.AssessmentDetailView.as_view(), name='assessment_detail'),
-    path('assessments/create/', views.AssessmentCreateView.as_view(), name='assessment_create'),
-    
-    # Handle Assessments
-    path('assessments/<int:assessment_id>/submit/', views.submit_assessment, name='submit_assessment'),
-    path('submission/<int:submission_id>/', views.view_submission, name='view_submission'),
-
+    path('create-assessment/<int:course_id>/', views.create_assessment, name='create_assessment'),
+    path('view-assessment/<int:assignment_id>/', views.view_assessment, name='view_assessment'),
+    path('submit-assessment/<int:assignment_id>/', views.submit_assessment, name='submit_assessment'),
+    path('view-submission/<int:submission_id>/', views.view_submission, name='view_submission'),
+    path('assign-marks/<int:submission_id>/', views.assign_marks, name='assign_marks'),
+    path('view-marks/', views.view_marks, name='view_marks'),
 ]
+
+

@@ -23,7 +23,8 @@ urlpatterns = [
     path('instructors/<int:id>/courses/<int:course_id>/delete', views.delete_course, name='delete_course'),
 
 
-    # Handle courses
+    # Handle courseMaterial
+    
 
 
     #Handle announcements

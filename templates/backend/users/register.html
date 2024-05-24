@@ -7,6 +7,8 @@
 {% block form_action %}{% url 'register' %}{% endblock %}
 
 {% block content %}
+    {%  csrf_token %}
+    
     <div class="col-md-6">
        {{ form.first_name }} 
     </div>

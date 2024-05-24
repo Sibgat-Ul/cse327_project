@@ -15,14 +15,14 @@ class CourseForm(ModelForm):
 
 
 class LoginForm(Form):
-    username = CharField(max_length=100)
+    email = CharField(max_length=100)
     password = CharField(max_length=100)
     role = CharField(max_length=10,
         widget=RadioSelect(
             choices=(
                 ('admin', 'Admin'),
                 ('student', 'Student'),
-                ('teacher', 'Teacher')
+                ('instructor', 'Instructor')
             ),
             attrs={'class': 'form-check-input'}
         )

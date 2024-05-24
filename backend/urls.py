@@ -4,26 +4,25 @@ from . import views
 
 urlpatterns = [
     # Handle users
-    path('', views.login, name='login'),
     path('login', views.login, name='login'),
     path('register', views.register, name='register'),
     path('logout', views.logout, name='logout'),
 
     # Handle students
-    path('students/<int:id>/view', views.student_view, name='students'),
-    path('students/<int:id>/courses/enroll', views.enroll, name='enroll'),
-    path('students/<int:id>/courses/<int:course_id>/details', views.course_details, name='course_details'),
+    path('student/<int:id>/view', views.student_view, name='student_view'),
+    path('student/<int:id>/courses', views.view_course_list, name='view_course_list'),
+    path('student/<int:id>/courses/enroll', views.enroll, name='enroll'),
+    path('student/<int:id>/courses/<int:course_id>/details', views.course_details, name='course_details'),
 
     # Handle instructors
-    path('instructors/<int:id>/view', views.instructor_view, name='instructors'),
-    path('instructors/<int:id>/courses', views.view_course_list, name='view_course_list'),
-    path('instructors/<int:id>/courses/<int:course_id>/details', views.course_details, name='course_details'),
-    path('instructors/<int:id>/courses/add', views.add_course, name='add_course'),
-    path('instructors/<int:id>/courses/<int:course_id>/edit', views.edit_course, name='edit_course'),
-    path('instructors/<int:id>/courses/<int:course_id>/delete', views.delete_course, name='delete_course'),
+    path('instructor/<int:id>/view', views.instructor_view, name='instructor_view'),
+    path('instructor/<int:id>/courses', views.view_course_list, name='view_course_list'),
+    path('instructor/<int:id>/courses/<int:course_id>/details', views.course_details, name='course_details'),
+    path('instructor/<int:id>/courses/add', views.add_course, name='add_course'),
+    path('instructor/<int:id>/courses/<int:course_id>/edit', views.edit_course, name='edit_course'),
+    path('instructor/<int:id>/courses/<int:course_id>/delete', views.delete_course, name='delete_course'),
 
 
-    # Handle courses
 ]
 
 

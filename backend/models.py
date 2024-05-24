@@ -89,3 +89,24 @@ class Announcement(models.Model):
             str: The title of the announcement.
         """
         return self.title
+
+
+ # Define the Event model to store event data in the database
+class Event(models.Model):
+    # Date field to store the date of the event
+    date = models.DateField()
+    # CharField to store the name of the event with a maximum length of 100 characters
+    name = models.CharField(max_length=100)
+
+    # String representation of the model to show the event name and date
+    def __str__(self):
+        return f"{self.name} on {self.date}"  
+    
+    
+# Define the Student model with name and email fields
+class Student(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+
+    def __str__(self):
+        return self.name

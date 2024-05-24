@@ -31,3 +31,17 @@ urlpatterns = [
     path('course/<int:course_id>/announcements/', views.view_announcements, name='view_announcements'),
 
 ]
+
+
+# Define URL patterns for the calendar view and event fetching API
+urlpatterns = [
+    path('', views.calendar_view, name='calendar'),
+    path('api/events/', views.get_events, name='get_events'),
+]
+
+
+# Define the URL pattern for the student list view
+urlpatterns = [
+    path('', views.student_list, name='student_list'),
+]
+

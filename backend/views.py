@@ -4,3 +4,4 @@ from backend.views_module.course_views import (
 )
 from backend.views_module.user_views import (login, register, logout, home)
 
+from backend.views_module.assessment_views import(create_assessment,view_assessment,submit_assessment,view_submission,assign_marks,view_marks)

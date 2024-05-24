@@ -1,0 +1,37 @@
+{% extends 'base_announcement.html' %}
+{% block title %}Create Announcement{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+  <h2>Create Announcement for {{ course.title }}</h2>
+  <form id="announcement-form" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Create</button>
+  </form>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  $(document).ready(function() {
+    $('#announcement-form').submit(function(event) {
+      event.preventDefault();
+      $.ajax({
+        type: 'POST',
+        url: '{% url "create_announcement" course.id %}',
+        data: $(this).serialize(),
+        success: function(response) {
+          // Handle success (e.g., show a success message, redirect)
+          alert('Announcement created successfully!');
+          window.location.href = "{% url 'view_announcements' course.id %}";
+        },
+        error: function(xhr, errmsg, err) {
+          // Handle errors (e.g., display error message)
+          alert('Failed to create announcement. Please try again.');
+        }
+      });
+    });
+  });
+</script>
+{% endblock %}

@@ -24,4 +24,10 @@ urlpatterns = [
 
 
     # Handle courses
+
+
+    #Handle announcements
+    path('course/<int:course_id>/create-announcement/', views.create_announcement, name='create_announcement'),
+    path('course/<int:course_id>/announcements/', views.view_announcements, name='view_announcements'),
+
 ]

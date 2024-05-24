@@ -49,6 +49,9 @@ class RegisterForm(ModelForm):
 
 
 class AnnouncementForm(ModelForm):
+    """
+    Form for creating and updating announcements.
+    """
     class Meta:
         model = Announcement
         fields = ['title', 'description', 'date', 'course']

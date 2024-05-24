@@ -19,3 +19,8 @@ from backend.views_module.user_views import (
     instructor_view
 )
 
+# Import announcement related views from announcement_views.py
+from backend.views_module.announcement_views import (
+    create_announcement,
+    view_announcements
+)

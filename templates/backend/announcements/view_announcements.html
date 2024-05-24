@@ -1,0 +1,17 @@
+{% extends 'base_announcement.html' %}
+{% block title %}View Announcements{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+  <h2>Announcements for {{ course.title }}</h2>
+  <ul class="list-group">
+    {% for announcement in announcements %}
+    <li class="list-group-item">
+      <h3>{{ announcement.title }}</h3>
+      <p>{{ announcement.description }}</p>
+      <p><em>Posted by: {{ announcement.created_by.username }} on {{ announcement.date }}</em></p>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}

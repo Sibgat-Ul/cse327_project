@@ -51,7 +51,7 @@ class Course(models.Model):
     def __str__(self):
         return f'Course Name: {self.name} \nInstructor: {self.instructor.first_name + ' ' + self.instructor.last_name}'
     
-    from django.db import models
+
 
 class Announcement(models.Model):
     """
@@ -60,19 +60,30 @@ class Announcement(models.Model):
     Attributes:
         title (str): The title of the announcement.
         description (str): The description of the announcement.
-        course (Course): The course related to the announcement.
+        date (date): The date when the announcement was created.
+        course (Course): The course to which the announcement belongs.
         created_by (User): The user who created the announcement.
-        created_at (datetime): The date and time when the announcement was created.
     """
-    title = models.CharField(max_length=200)
+
+    title = models.CharField(max_length=255)
     description = models.TextField()
-    course = models.ForeignKey('Course', on_delete=models.CASCADE)
-    created_by = models.ForeignKey('User', on_delete=models.CASCADE)
-    created_at = models.DateTimeField(auto_now_add=True)
+    date = models.DateField(auto_now_add=True)
+    course = models.ForeignKey(
+        Course,
+        on_delete=models.CASCADE,
+        related_name='announcements',
+        help_text="The course to which the announcement belongs."
+    )
+    created_by = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        related_name='created_announcements',
+        help_text="The user who created the announcement."
+    )
 
     def __str__(self):
         """
-        Returns a string representation of the announcement.
+        Returns the string representation of the announcement.
 
         Returns:
             str: The title of the announcement.

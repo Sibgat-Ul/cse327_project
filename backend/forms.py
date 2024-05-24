@@ -1,5 +1,6 @@
+from django import forms
 from django.forms import Form, CharField, ChoiceField, RadioSelect, IntegerField, DateField, ModelForm
-from .models import User, Course ,Announcement
+from .models import User, Course ,Announcement ,CourseMaterial
 
 
 class UserForm(ModelForm):
@@ -13,6 +14,23 @@ class CourseForm(ModelForm):
         model = Course
         fields = '__all__'
 
+
+class CourseMaterialForm(ModelForm):
+    """
+    Form for adding or editing course materials.
+
+    Meta:
+        model (CourseMaterial): The model associated with this form.
+        fields (list): The fields to be included in the form.
+        widgets (dict): Custom widgets for form fields.
+    """
+    class Meta:
+        model = CourseMaterial
+        fields = ['title', 'material_type', 'content', 'upload']
+        widgets = {
+            'material_type': forms.Select(choices=CourseMaterial.MATERIAL_TYPE_CHOICES),
+            'content': forms.Textarea(attrs={'rows': 4}),
+        }
 
 class LoginForm(Form):
     username = CharField(max_length=100)
@@ -54,4 +72,4 @@ class AnnouncementForm(ModelForm):
     """
     class Meta:
         model = Announcement
-        fields = ['title', 'description', 'date', 'course']
+        fields = ['title', 'description',  'course']

@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from backend.models import Course
 from  backend.models import Announcement
-from backend.models import AnnouncementForm
+from backend.forms import AnnouncementForm
 
 
 @login_required

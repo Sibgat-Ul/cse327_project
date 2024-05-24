@@ -52,6 +52,38 @@ class Course(models.Model):
         return f'Course Name: {self.name} \nInstructor: {self.instructor.first_name + ' ' + self.instructor.last_name}'
     
 
+class CourseMaterial(models.Model):
+    """
+    Model representing course materials.
+
+    Attributes:
+        course (Course): The course this material is associated with.
+        title (str): The title of the course material.
+        material_type (str): The type of the course material (document, video, link).
+        content (str): The content or description of the course material.
+        upload (FileField): The file uploaded for the course material.
+    """
+    MATERIAL_TYPE_CHOICES = [
+        ('document', 'Document'),
+        ('video', 'Video'),
+        ('link', 'Link'),
+    ]
+
+    course = models.ForeignKey(Course, related_name='materials', on_delete=models.CASCADE)
+    title = models.CharField(max_length=200)
+    material_type = models.CharField(max_length=10, choices=MATERIAL_TYPE_CHOICES)
+    content = models.TextField()
+    upload = models.FileField(upload_to='course_materials/', blank=True, null=True)
+
+    def __str__(self):
+        """
+        Returns the string representation of the course material.
+
+        Returns:
+            str: The title of the course material.
+        """
+        return self.title    
+
 
 class Announcement(models.Model):
     """
@@ -110,3 +142,4 @@ class Student(models.Model):
 
     def __str__(self):
         return self.name
+    

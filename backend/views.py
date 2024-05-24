@@ -1,4 +1,6 @@
 from django.shortcuts import render, redirect
+from .models import Event
+from django.http import JsonResponse
 
 from backend.views_module.assessment_views import(create_assessment,view_assessment,submit_assessment,view_submission,assign_marks,view_marks)
 # Import course related views from course_views.py
@@ -20,10 +22,7 @@ from backend.views_module.user_views import (
     instructor_view
 )
 
-# Import necessary modules from Django and the Event model
 
-from .models import Event
-from django.http import JsonResponse
 
 # Define a view to render the calendar template
 def calendar_view(request):

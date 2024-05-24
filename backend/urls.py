@@ -23,7 +23,7 @@ urlpatterns = [
     path('view-submission/<int:submission_id>/', views.view_submission, name='view_submission'),
     path('assign-marks/<int:submission_id>/', views.assign_marks, name='assign_marks'),
     path('view-marks/', views.view_marks, name='view_marks'),
-]
+
 
 
     # Handle students
@@ -44,15 +44,6 @@ urlpatterns = [
 ]
 
 
-# Define URL patterns for the calendar view and event fetching API
-urlpatterns = [
-    path('', views.calendar_view, name='calendar'),
-    path('api/events/', views.get_events, name='get_events'),
-]
 
 
-# Define the URL pattern for the student list view
-urlpatterns = [
-    path('', views.student_list, name='student_list'),
-]
 

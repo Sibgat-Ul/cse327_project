@@ -11,7 +11,7 @@
     <style>
                 /* Set body to full viewport height */
         body, html {
-            height: 100%;
+            height: 100vh;
             width: 100%;
             margin: 0;
             background-color: #e0e0e0;
@@ -69,9 +69,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
+          {% block top_nav_item %} {% endblock %}
       </ul>
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -82,11 +80,11 @@
   </div>
 </nav>
 
-<div class="container-fluid">
-  <div class="row my-2" style="margin: auto; padding: 0">
-    <div class="col-md-2 sidebar overflow-hidden rounded-2 mx-lg-2">
-      <ul class="nav navbar-dark bg-dark sidenav flex-column gap-2 px-3 py-2 h-100">
-        <li style="height: 3em">
+<div class="container-fluid overflow-hidden px-2">
+  <div class="row p-2 gap-2" style="height: 91vh">
+    <div class="col-md-2 sidebar bg-dark overflow-hidden p-1 rounded-2">
+      <ul class="nav navbar-dark sidenav flex-column gap-3 px-3 py-2 h-100">
+        <li style="height: 2.5em">
             <h3>
                 Menu
             </h3>
@@ -106,10 +104,10 @@
       </ul>
     </div>
 
-    <div class="col-md-9 bg-white rounded-2" style="padding: 1em;"> 
-        {% block content %}
-            <h1 style="font-size: 32px;">Welcome to the Dashboard</h1> 
-        {% endblock %}
+    <div class="col-md-10 bg-white rounded-2" style="padding: 1.5em .5em; width: 82vw"> 
+        <div class="container-fluid px-3">
+            {% block content %} {% endblock %}
+        </div>
     </div>
   
   </div>

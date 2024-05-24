@@ -5,7 +5,7 @@ from django.conf import settings
 class User(models.Model):
     """
     User Model for storing user details in Database
-    uuid: Unique ID of the user
+    id: Unique ID of the user
     name: Name of the user
     age: Age of the user
     email: Email of the user
@@ -16,10 +16,9 @@ class User(models.Model):
     contact_no: Contact number of the user
     """
 
-    id = models.BigAutoField(primary_key=True)
+    id = models.BigAutoField(primary_key=True, default=0)
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
-    age = models.IntegerField()
     dob = models.DateField()
     email = models.EmailField(unique=True)
     password = models.CharField(max_length=50)
@@ -37,7 +36,7 @@ class User(models.Model):
 class Course(models.Model):
     """
     Course Model for storing course details in Database
-    uuid: Unique ID of the course
+    id: Unique ID of the course
     name: Name of the course
     description: Description of the course
     instructor: Instructor of the course
@@ -98,3 +97,24 @@ class Submission(models.Model):
 
     def __str__(self):
         return f"{self.student.username} - {self.assignment.title}"
+
+
+ # Define the Event model to store event data in the database
+class Event(models.Model):
+    # Date field to store the date of the event
+    date = models.DateField()
+    # CharField to store the name of the event with a maximum length of 100 characters
+    name = models.CharField(max_length=100)
+
+    # String representation of the model to show the event name and date
+    def __str__(self):
+        return f"{self.name} on {self.date}"  
+    
+    
+# Define the Student model with name and email fields
+class Student(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+
+    def __str__(self):
+        return self.name

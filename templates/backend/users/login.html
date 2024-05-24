@@ -2,26 +2,33 @@
 
 {% block title %} Login {% endblock %}
 
+{% block header %}
+    Login
+{% endblock %}
+
+{% block form_action %}{% url 'login' %}{% endblock %}
+
 {% block content %} 
-        {% csrf_token %}
-        <div class="col-md-6">
-            <input type="email" id="email" placeholder="Enter your email" class="form-control" aria-description="Email">
-        </div>
-        <div class="col-md-6">
-            <input type="password" id="password" placeholder="Enter your password" class="form-control" aria-description="Password">
-        </div>
+    {% csrf_token %}
+    
+    <div class="col-12">
+        <input type="email" name="email" id="email" placeholder="Enter your email" class="form-control" aria-description="Email">
+    </div>
+    <div class="col-12">
+        <input type="password" name="password" id="password" placeholder="Enter your password" class="form-control" aria-description="Password">
+    </div>
         
-        <div class="col-md-6 text-start">
-           {% for choices in form.role %}
-               <div class="form-check">
-                   <input type="radio" id="role" name="role" class="form-check-input">
-                   <label class="form-check-label" for="role">
-                      {{ choices }} 
-                   </label> 
-                </div>
-           {%  endfor %}
-        </div>
+    <div class="col-12 text-start">
+       {% for choices in form.role %}
+           {{ choices }}
+       {%  endfor %}
+    </div>
         
-        <button type="submit" class="w-50 btn btn-primary">Login</button>
-    <a href="{% url 'register' %}">Register</a>
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary">Login</button>
+        <br>
+        <a href="{% url 'register' %}">
+            Don't have an account? Register
+        </a>
+    </div>
 {% endblock %}

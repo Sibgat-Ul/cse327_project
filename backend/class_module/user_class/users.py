@@ -9,7 +9,7 @@ class User:
     def __init__(
             self,
             name: str,
-            age: np.int16,
+            dob: str,
             email: str,
             password: str,
             country: str,
@@ -19,7 +19,7 @@ class User:
     ):
         """
         :param name: Name of the user
-        :param age: Age of the user
+        :param dob: str
         :param email: Email of the user
         :param password: Password of the user
         :param country: Country of the user
@@ -28,17 +28,14 @@ class User:
         :param contact_no: Contact number of the user
         """
         self.username = name
-        self.age = age
+        self.dob = dob
         self.email = email
         self.password = password
         self.country = country
         self.city = city
         self.role = role
         self.contact_no = contact_no
-
         self.courses = []
-
-        self.user_id = None
 
     def __str__(self):
         return self.username

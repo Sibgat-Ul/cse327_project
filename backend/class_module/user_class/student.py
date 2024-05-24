@@ -1,13 +1,13 @@
-from backend.all_class.user_class.users import User
-from backend.all_class.course_class import Course
+from backend.class_module.user_class.users import User
 
-class Instructor(User):
+
+class Student(User):
     """
-    Instructor class to create instructor object
+    Student class to create student object
     """
     def __init__(self, name, age, email, country, city, password, contact_no):
         """
-        Instructor class to create instructor object
+        Student class to create student object
 
         :param name:
         :param age:
@@ -24,36 +24,27 @@ class Instructor(User):
             password=password,
             country=country,
             city=city,
-            role='instructor',
+            role='student',
             contact_no=contact_no
         )
         self.courses = []
 
-    def create_course(self, course: dict) -> None:
+    def enroll_course(self, course: dict) -> None:
         """
-        Create course by instructor
+        Enroll student to a course
 
         :param course:
         :return:
         """
         self.courses.append(course)
 
-    def delete_course(self, course: dict) -> None:
-        """
-        Delete course by instructor
-
-        :param course:
-        :return:
-        """
-        self.courses.remove(course)
-
     def get_courses(self) -> list:
         """
-        Get courses of instructor
+        Get courses of student
 
         :return:
         """
         return self.courses
 
-    def get_instructor_details(self) -> dict:
+    def get_student_details(self) -> dict:
         return self.get_user_details()
